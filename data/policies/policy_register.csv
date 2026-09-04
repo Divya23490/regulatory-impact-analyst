@@ -1,0 +1,13 @@
+policy_id,title,owner,last_reviewed,summary
+POL-001,ICT Risk Management Framework,CISO,2023-02-15,Defines identification/assessment/treatment of ICT risks; annual board review not yet formalised.
+POL-002,Information Security Policy,CISO,2024-06-01,Access control, encryption, secure SDLC baseline.
+POL-003,Incident Management Standard,Head of IT Operations,2023-11-20,Internal incident severity scale (P1-P4); no regulator notification workflow or deadlines.
+POL-004,Business Continuity & Disaster Recovery,COO Office,2024-01-10,RTO/RPO per service; annual DR test; scenario library limited to data-centre loss.
+POL-005,Third-Party & Outsourcing Policy,Procurement,2022-09-05,Vendor onboarding due diligence; no register distinguishing critical/important functions.
+POL-006,Cloud Usage Policy,Enterprise Architecture,2024-03-22,Approved cloud providers; shared-responsibility model; exit strategy guidance is informal.
+POL-007,Penetration Testing Standard,CISO,2023-07-18,Annual external pen test of internet-facing systems; no threat-led (TLPT) programme.
+POL-008,Model Risk Management Policy,Head of Model Risk,2024-04-30,Validation lifecycle for credit and capital models; AI/ML-specific controls thin.
+POL-009,Data Governance Policy,Chief Data Officer,2024-02-11,Data quality, lineage, ownership; training-data governance for ML not covered.
+POL-010,Vendor Contract Clause Library,Legal,2023-05-09,Standard clauses; lacks audit/access rights and sub-outsourcing terms for ICT.
+POL-011,Board Training & Competence Policy,Company Secretary,2023-10-01,Induction and annual training plan; no ICT/operational-resilience module.
+POL-012,Threat Intelligence & Information Sharing,SOC Lead,2024-05-14,Consumes commercial feeds; no framework for sharing within trusted communities.
