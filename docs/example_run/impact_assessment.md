@@ -1,33 +1,39 @@
 # DORA — Impact Assessment
 
 ## Executive summary
-This Regulatory Impact Assessment evaluates the bank's internal policy register against the six core themes of the Digital Operational Resilience Act (DORA). The assessment identified significant policy gaps across all operational resilience domains. Most critically, the bank lacks formalized annual board review workflows (POL-001), harmonized incident reporting criteria and regulator SLAs (POL-003), threat-led penetration testing (POL-007), comprehensive third-party information registers and mandatory contract clauses (POL-005, POL-010), CTPP oversight integration, and trusted-community information sharing frameworks with GDPR safeguards (POL-012). Immediate remediation is required to achieve full compliance and avoid regulatory sanctions.
+The Digital Operational Resilience Act (DORA) imposes rigorous obligations on the bank regarding ICT risk management, incident reporting, digital operational resilience testing, third-party risk management, and information sharing. Based on the consolidated research findings (`findings.md`), the bank's current regulatory posture contains significant compliance gaps across twelve core policies (POL-001 through POL-012). Addressing these gaps requires immediate, coordinated intervention across Information Security, Risk Management, Third-Party Vendor Management, and Operations to avoid regulatory sanction and ensure operational continuity.
 
 ## Affected policies
-* **POL-001**: Governance and Board Oversight Policy (missing annual board review workflows)
-* **POL-003**: Incident Management and Reporting Policy (missing harmonized incident reporting criteria and regulator SLAs)
-* **POL-005**: Third-Party Risk Management Policy (missing comprehensive register of information)
-* **POL-007**: Penetration Testing and Vulnerability Management Policy (missing threat-led penetration testing)
-* **POL-010**: Outsourcing and Vendor Contracting Policy (missing mandatory contract clauses and CTPP oversight integration)
-* **POL-012**: Threat Intelligence and Information Sharing Policy (missing trusted-community information sharing frameworks and GDPR safeguards)
+*   **POL-001** (ICT Risk Management Framework)
+*   **POL-002** (Major ICT Incident Management & Reporting)
+*   **POL-003** (Digital Operational Resilience Testing)
+*   **POL-004** (ICT Third-Party Risk Management / Outsourcing)
+*   **POL-005** (Information & Intelligence Sharing on Cyber Threats)
+*   **POL-006** (Business Continuity & Disaster Recovery)
+*   **POL-007** (Asset & Configuration Management)
+*   **POL-008** (Access Control & Identity Management)
+*   **POL-009** (Data Protection & Cryptography)
+*   **POL-010** (Physical & Environmental Security)
+*   **POL-011** (Project & Change Management)
+*   **POL-012** (Training & Awareness)
 
 ## Gap analysis
-The bank's current internal policy register fails to meet the stringent requirements mandated by DORA across the following areas:
-* **Governance and Oversight:** POL-001 does not mandate the formal annual review and approval workflows for digital operational resilience strategies required of the management body.
-* **ICT Incident Management:** POL-003 lacks the necessary harmonized classification criteria for major ICT-related incidents and fails to align with strict regulatory Service Level Agreements (SLAs) for initial, intermediate, and final notifications.
-* **Digital Operational Resilience Testing:** POL-007 does not incorporate Threat-Led Penetration Testing (TLPT) protocols as mandated for significant financial entities under DORA.
-* **Third-Party Risk Management (ICT Third-Party Risk):** POL-005 and POL-010 fail to establish a comprehensive register of information covering all contractual arrangements with ICT third-party service providers. Furthermore, vendor contracts omit mandatory DORA clauses (e.g., access and audit rights, exit strategies) and lack integration for Critical ICT Third-Party Providers (CTPPs).
-* **Information Sharing:** POL-012 lacks provisions for participating in trusted-community threat intelligence arrangements while simultaneously enforcing strict GDPR and data protection safeguards.
+*   **ICT Risk Management & Governance (POL-001, POL-007, POL-008, POL-009, POL-010, POL-011):** The bank lacks an integrated ICT risk framework that explicitly covers all DORA mandates. Asset inventories (POL-007) do not comprehensively map critical ICT assets supporting vital functions. Access controls (POL-008) and cryptographic standards (POL-009) fail to meet DORA's heightened encryption-at-rest and strict least-privilege baseline requirements. Physical security (POL-010) and change management (POL-011) procedures lack formal alignment with ICT resilience standards.
+*   **Incident Management (POL-002, POL-006):** Current major incident workflows do not support DORA's strict preliminary, intermediate, and final reporting timelines to competent authorities. Business continuity plans (POL-006) lack mandatory ICT-focused disaster recovery testing scenarios and fail to account for severe systemic disruptions.
+*   **Resilience Testing (POL-003):** The bank's testing regime relies on standard vulnerability scans and penetration tests, falling short of DORA requirements for advanced Threat-Led Penetration Testing (TLPT) for critical functions.
+*   **Third-Party Risk Management (POL-004):** Existing vendor management policies do not incorporate mandatory DORA contractual clauses regarding audit rights, termination assistance, performance monitoring, and concentration risk analysis for ICT third-party service providers (ICT TPPs).
+*   **Information Sharing (POL-005):** The bank has no formal policy or framework governing participation in cyber threat intelligence information-sharing arrangements with trusted financial sector peers.
+*   **Training & Awareness (POL-012):** Current staff training programs do not include DORA-specific operational resilience and digital hygiene modules tailored to role-based risks.
 
 ## Recommended actions
-1. Update POL-001 to explicitly mandate and operationalize annual board review workflows for the bank's digital operational resilience strategy. (**Owner:** Chief Risk Officer | **Priority:** H)
-2. Revise POL-003 to incorporate harmonized incident reporting criteria and strict regulatory SLAs for major ICT incidents. (**Owner:** Head of Information Security | **Priority:** H)
-3. Amend POL-005 and POL-010 to establish a comprehensive ICT third-party register of information and enforce mandatory DORA contract clauses across all vendor agreements. (**Owner:** Head of Procurement / Third-Party Risk | **Priority:** H)
-4. Update POL-007 to include frameworks and schedules for Threat-Led Penetration Testing (TLPT). (**Owner:** Head of Information Security | **Priority:** M)
-5. Integrate CTPP oversight mechanisms into POL-010 to monitor systemic third-party dependencies. (**Owner:** Head of Third-Party Risk | **Priority:** M)
-6. Revise POL-012 to establish trusted-community information sharing frameworks embedded with robust GDPR safeguards. (**Owner:** Chief Information Security Officer / Data Protection Officer | **Priority:** L)
+1. **[Owner: Chief Information Security Officer]** Overhaul POL-001, POL-007, POL-008, POL-009, POL-010, and POL-011 to establish a unified ICT risk management framework, complete asset inventory, and elevated technical security controls matching DORA baselines. *(Priority: High)*
+2. **[Owner: Head of Operational Risk]** Update POL-002 and POL-006 to institute accelerated major ICT incident classification, escalation, and regulatory reporting workflows, alongside enhanced ICT disaster recovery testing. *(Priority: High)*
+3. **[Owner: Head of Vendor Management]** Revise POL-004 to introduce rigorous ICT third-party risk management lifecycles, mandating standardized DORA contractual provisions and concentration risk tracking. *(Priority: High)*
+4. **[Owner: Head of Information Security]** Establish a Threat-Led Penetration Testing (TLPT) program under POL-003 targeting critical ICT systems. *(Priority: Medium)*
+5. **[Owner: Head of Threat Intelligence]** Draft and implement POL-005 to formalize protocols for participating in cyber threat intelligence sharing arrangements. *(Priority: Medium)*
+6. **[Owner: Head of Human Resources / Learning & Development]** Update POL-012 to mandate annual DORA-specific digital resilience and cyber hygiene training across all staff levels. *(Priority: Medium)*
 
 ## Open questions
-* What is the definitive timeline and regulatory expectation for completing the first mandatory Threat-Led Penetration Testing (TLPT) cycle under DORA?
-* Which specific supervisory authority will be designated as the primary lead overseer for the bank's identified Critical ICT Third-Party Providers (CTPPs)?
-* What standardized templates or taxonomies do European Supervisory Authorities (ESAs) require for the third-party register of information?
+*   Which specific external entities have been designated by national competent authorities as critical ICT third-party service providers (ICT TPPs) for our institution?
+*   What is the exact jurisdictional timeline and template format required by our primary regulator for intermediate and final major ICT incident reports under DORA?
+*   Are existing threat-intelligence sharing arrangements legally compliant with data privacy frameworks (e.g., GDPR) while participating in DORA-aligned information-sharing pacts?

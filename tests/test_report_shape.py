@@ -55,3 +55,11 @@ def test_file_text_still_accepts_a_plain_string():
 
 def test_file_text_missing_file_returns_none():
     assert _file_text({}, "findings.md") is None
+
+
+def test_file_text_finds_a_root_style_path():
+    # deepagents' virtual filesystem is root-based ("/findings.md"), not
+    # relative ("findings.md") — a real run produced "/todos.md" and the
+    # lookup needs to find it either way.
+    files = {"/findings.md": {"content": "# Findings", "encoding": "utf-8"}}
+    assert _file_text(files, "findings.md") == "# Findings"

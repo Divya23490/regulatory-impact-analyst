@@ -154,3 +154,11 @@ tests/
   committee agents is its own request). `graph.py` attaches a `RetryPolicy` to
   every LLM-calling node for the former; for the latter, either wait for the
   daily reset or point `REGIMPACT_MODEL` at a different model / paid tier.
+- **Deep Agents' virtual filesystem naming**: `create_deep_agent`'s default
+  `StateBackend` names files after the real, absolute working directory the
+  agent ran from (e.g. `/Users/you/project/findings.md`), not a clean
+  `/findings.md` root as you might expect. `cli.py`'s `_persist` takes just the
+  basename when writing these out — both to avoid pathlib silently resolving
+  `research_dir / "/todos.md"` to real filesystem root (it did, and crashed
+  with a read-only-filesystem error), and to avoid baking a local username
+  into a committed example run.

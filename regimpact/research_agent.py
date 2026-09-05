@@ -155,8 +155,14 @@ def run_research(regulation_name: str, regulation_text: str, themes: list[str],
 
 
 def _file_text(files: dict[str, dict], name: str) -> str | None:
-    """Pull the text content out of a deepagents virtual-filesystem entry."""
-    entry = files.get(name)
+    """Pull the text content out of a deepagents virtual-filesystem entry.
+
+    deepagents' virtual filesystem is root-based — it writes `/findings.md`,
+    not `findings.md` — but the exact leading-slash convention isn't part of
+    its public contract, so we look up both forms rather than assume one.
+    """
+    bare = name.lstrip("/")
+    entry = files.get(name, files.get(bare, files.get(f"/{bare}")))
     if entry is None:
         return None
     return entry["content"] if isinstance(entry, dict) else entry

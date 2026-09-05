@@ -5,76 +5,77 @@ Review this draft DORA impact assessment. One round only; the Editor then consol
 # DORA — Impact Assessment
 
 ## Executive summary
-This Regulatory Impact Assessment evaluates the bank's internal policy register against the six core themes of the Digital Operational Resilience Act (DORA). The assessment identified significant policy gaps across all operational resilience domains. Most critically, the bank lacks formalized annual board review workflows (POL-001), harmonized incident reporting criteria and regulator SLAs (POL-003), threat-led penetration testing (POL-007), comprehensive third-party information registers and mandatory contract clauses (POL-005, POL-010), CTPP oversight integration, and trusted-community information sharing frameworks with GDPR safeguards (POL-012). Immediate remediation is required to achieve full compliance and avoid regulatory sanctions.
+The Digital Operational Resilience Act (DORA) imposes rigorous obligations on the bank regarding ICT risk management, incident reporting, digital operational resilience testing, third-party risk management, and information sharing. Based on the consolidated research findings (`findings.md`), the bank's current regulatory posture contains significant compliance gaps across twelve core policies (POL-001 through POL-012). Addressing these gaps requires immediate, coordinated intervention across Information Security, Risk Management, Third-Party Vendor Management, and Operations to avoid regulatory sanction and ensure operational continuity.
 
 ## Affected policies
-* **POL-001**: Governance and Board Oversight Policy (missing annual board review workflows)
-* **POL-003**: Incident Management and Reporting Policy (missing harmonized incident reporting criteria and regulator SLAs)
-* **POL-005**: Third-Party Risk Management Policy (missing comprehensive register of information)
-* **POL-007**: Penetration Testing and Vulnerability Management Policy (missing threat-led penetration testing)
-* **POL-010**: Outsourcing and Vendor Contracting Policy (missing mandatory contract clauses and CTPP oversight integration)
-* **POL-012**: Threat Intelligence and Information Sharing Policy (missing trusted-community information sharing frameworks and GDPR safeguards)
+*   **POL-001** (ICT Risk Management Framework)
+*   **POL-002** (Major ICT Incident Management & Reporting)
+*   **POL-003** (Digital Operational Resilience Testing)
+*   **POL-004** (ICT Third-Party Risk Management / Outsourcing)
+*   **POL-005** (Information & Intelligence Sharing on Cyber Threats)
+*   **POL-006** (Business Continuity & Disaster Recovery)
+*   **POL-007** (Asset & Configuration Management)
+*   **POL-008** (Access Control & Identity Management)
+*   **POL-009** (Data Protection & Cryptography)
+*   **POL-010** (Physical & Environmental Security)
+*   **POL-011** (Project & Change Management)
+*   **POL-012** (Training & Awareness)
 
 ## Gap analysis
-The bank's current internal policy register fails to meet the stringent requirements mandated by DORA across the following areas:
-* **Governance and Oversight:** POL-001 does not mandate the formal annual review and approval workflows for digital operational resilience strategies required of the management body.
-* **ICT Incident Management:** POL-003 lacks the necessary harmonized classification criteria for major ICT-related incidents and fails to align with strict regulatory Service Level Agreements (SLAs) for initial, intermediate, and final notifications.
-* **Digital Operational Resilience Testing:** POL-007 does not incorporate Threat-Led Penetration Testing (TLPT) protocols as mandated for significant financial entities under DORA.
-* **Third-Party Risk Management (ICT Third-Party Risk):** POL-005 and POL-010 fail to establish a comprehensive register of information covering all contractual arrangements with ICT third-party service providers. Furthermore, vendor contracts omit mandatory DORA clauses (e.g., access and audit rights, exit strategies) and lack integration for Critical ICT Third-Party Providers (CTPPs).
-* **Information Sharing:** POL-012 lacks provisions for participating in trusted-community threat intelligence arrangements while simultaneously enforcing strict GDPR and data protection safeguards.
+*   **ICT Risk Management & Governance (POL-001, POL-007, POL-008, POL-009, POL-010, POL-011):** The bank lacks an integrated ICT risk framework that explicitly covers all DORA mandates. Asset inventories (POL-007) do not comprehensively map critical ICT assets supporting vital functions. Access controls (POL-008) and cryptographic standards (POL-009) fail to meet DORA's heightened encryption-at-rest and strict least-privilege baseline requirements. Physical security (POL-010) and change management (POL-011) procedures lack formal alignment with ICT resilience standards.
+*   **Incident Management (POL-002, POL-006):** Current major incident workflows do not support DORA's strict preliminary, intermediate, and final reporting timelines to competent authorities. Business continuity plans (POL-006) lack mandatory ICT-focused disaster recovery testing scenarios and fail to account for severe systemic disruptions.
+*   **Resilience Testing (POL-003):** The bank's testing regime relies on standard vulnerability scans and penetration tests, falling short of DORA requirements for advanced Threat-Led Penetration Testing (TLPT) for critical functions.
+*   **Third-Party Risk Management (POL-004):** Existing vendor management policies do not incorporate mandatory DORA contractual clauses regarding audit rights, termination assistance, performance monitoring, and concentration risk analysis for ICT third-party service providers (ICT TPPs).
+*   **Information Sharing (POL-005):** The bank has no formal policy or framework governing participation in cyber threat intelligence information-sharing arrangements with trusted financial sector peers.
+*   **Training & Awareness (POL-012):** Current staff training programs do not include DORA-specific operational resilience and digital hygiene modules tailored to role-based risks.
 
 ## Recommended actions
-1. Update POL-001 to explicitly mandate and operationalize annual board review workflows for the bank's digital operational resilience strategy. (**Owner:** Chief Risk Officer | **Priority:** H)
-2. Revise POL-003 to incorporate harmonized incident reporting criteria and strict regulatory SLAs for major ICT incidents. (**Owner:** Head of Information Security | **Priority:** H)
-3. Amend POL-005 and POL-010 to establish a comprehensive ICT third-party register of information and enforce mandatory DORA contract clauses across all vendor agreements. (**Owner:** Head of Procurement / Third-Party Risk | **Priority:** H)
-4. Update POL-007 to include frameworks and schedules for Threat-Led Penetration Testing (TLPT). (**Owner:** Head of Information Security | **Priority:** M)
-5. Integrate CTPP oversight mechanisms into POL-010 to monitor systemic third-party dependencies. (**Owner:** Head of Third-Party Risk | **Priority:** M)
-6. Revise POL-012 to establish trusted-community information sharing frameworks embedded with robust GDPR safeguards. (**Owner:** Chief Information Security Officer / Data Protection Officer | **Priority:** L)
+1. **[Owner: Chief Information Security Officer]** Overhaul POL-001, POL-007, POL-008, POL-009, POL-010, and POL-011 to establish a unified ICT risk management framework, complete asset inventory, and elevated technical security controls matching DORA baselines. *(Priority: High)*
+2. **[Owner: Head of Operational Risk]** Update POL-002 and POL-006 to institute accelerated major ICT incident classification, escalation, and regulatory reporting workflows, alongside enhanced ICT disaster recovery testing. *(Priority: High)*
+3. **[Owner: Head of Vendor Management]** Revise POL-004 to introduce rigorous ICT third-party risk management lifecycles, mandating standardized DORA contractual provisions and concentration risk tracking. *(Priority: High)*
+4. **[Owner: Head of Information Security]** Establish a Threat-Led Penetration Testing (TLPT) program under POL-003 targeting critical ICT systems. *(Priority: Medium)*
+5. **[Owner: Head of Threat Intelligence]** Draft and implement POL-005 to formalize protocols for participating in cyber threat intelligence sharing arrangements. *(Priority: Medium)*
+6. **[Owner: Head of Human Resources / Learning & Development]** Update POL-012 to mandate annual DORA-specific digital resilience and cyber hygiene training across all staff levels. *(Priority: Medium)*
 
 ## Open questions
-* What is the definitive timeline and regulatory expectation for completing the first mandatory Threat-Led Penetration Testing (TLPT) cycle under DORA?
-* Which specific supervisory authority will be designated as the primary lead overseer for the bank's identified Critical ICT Third-Party Providers (CTPPs)?
-* What standardized templates or taxonomies do European Supervisory Authorities (ESAs) require for the third-party register of information?
+*   Which specific external entities have been designated by national competent authorities as critical ICT third-party service providers (ICT TPPs) for our institution?
+*   What is the exact jurisdictional timeline and template format required by our primary regulator for intermediate and final major ICT incident reports under DORA?
+*   Are existing threat-intelligence sharing arrangements legally compliant with data privacy frameworks (e.g., GDPR) while participating in DORA-aligned information-sharing pacts?
 
 ### ComplianceOfficer
-As Group Compliance Officer, I have reviewed the draft impact assessment against DORA (Regulation (EU) 2022/2554). 
-
-Raise the following 3 points:
-
-1. **Missing Articles of the Regulation:** The assessment completely omits specific citations to DORA Articles (e.g., Articles 5-16 for Governance, Articles 17-23 for Incident Management, Articles 24-27 for Testing, Articles 28-44 for Third-Party Risk, and Article 45 for Information Sharing). These must be mapped explicitly to each policy gap.
-2. **Missing Obligations (ICT Risk Management Framework):** The draft fails to address the foundational ICT Risk Management requirements under Chapter II (Articles 5–15), specifically concerning asset identification, protection, prevention, detection, and business continuity/disaster recovery plans.
-3. **Wrong/Missing Deadlines:** The assessment lacks any target remediation dates or compliance timelines tied to DORA’s statutory enforcement date (January 17, 2025), leaving the urgency of the recommended actions undefined.
+1. **Missing Regulation Articles:** The draft completely omits specific DORA article references (e.g., Articles 5-16 for ICT Risk Management, Articles 17-23 for Incident Reporting, Articles 24-27 for Testing, and Articles 28-44 for Third-Party Risk). 
+2. **Missing Obligation (Register of Information):** The impact assessment fails to mandate the creation and maintenance of the comprehensive Register of Information required under Article 28(3) for all contractual arrangements on the use of ICT services.
+3. **Wrong/Missing Deadlines:** The draft omits the statutory application date of DORA (January 17, 2025) and regulatory enforcement timelines, leaving all remediation actions tied only to vague priorities rather than hard legal deadlines.
 
 ### RiskOfficer
-As Chief Risk Officer, focusing strictly on the sizing of operational, ICT, and third-party risk and the proportionality of the proposed actions, I raise the following 3 points:
+As Chief Risk Officer, focusing strictly on operational, ICT, and third-party risk sizing and the proportionality of actions, I raise the following 3 points:
 
-1. **Misallocated Accountability for Board Oversight:** Action 1 assigns ownership of POL-001 (Governance and Board Oversight Policy) to the Chief Risk Officer (CRO). Under DORA, ultimate responsibility and accountability for approving and overseeing the digital operational resilience strategy rests squarely with the management body (the Board), not the second-line risk function. The CRO can advise, but cannot "own" the governance workflow of the board itself. 
-2. **Disproportionate Prioritization of TLPT:** Action 4 rates Threat-Led Penetration Testing (POL-007) as Medium priority. Given that TLPT is a major, resource-intensive operational requirement under DORA—mandating specialized external testers, threat intelligence providers, and strict regulatory coordination for significant financial entities—classifying it as Medium risks severe under-scoping and delays in execution.
-3. **Underestimated Complexity of ICT Third-Party Registers:** Action 3 bundles the creation of a comprehensive ICT third-party register of information and the renegotiation of all vendor contracts into a single high-priority action. From a risk sizing perspective, retrofitting thousands of legacy vendor contracts with mandatory DORA clauses and establishing the prescribed Register of Information (including intra-group arrangements and sub-outsourcing chains) represent a massive operational and third-party risk burden that requires phased, dedicated sub-workstreams rather than a blanket policy update.
+1. **Under-scoping of Third-Party Risk Concentration:** The draft correctly identifies gaps in ICT Third-Party Risk Management (POL-004), but the recommended actions fail to size the systemic risk of *chain* outsourcing and geographical concentration. The remediation must explicitly mandate a mapping of downstream sub-outsourcers of critical ICT TPPs to prevent unmitigated single points of failure.
+2. **Disproportionate TLPT Prioritizing:** Assigning Threat-Led Penetration Testing (POL-003) a "Medium" priority under Action 4 is misaligned with operational risk reality. If the bank supports critical or important functions under DORA, TLPT is a mandatory regulatory requirement subject to strict oversight. Sizing this as medium risks regulatory sanction; it must be elevated to "High" priority alongside governance and third-party overhauls.
+3. **Lack of Phased Operational Sizing for Incident Reporting:** Action 2 tasks the Head of Operational Risk with updating incident workflows (POL-002, POL-006) to meet strict preliminary, intermediate, and final reporting timelines, but fails to size the operational and resourcing burden on the 24/7 Security Operations Center (SOC) and Incident Response teams. The action is disproportionate unless it includes provisions for immediate headcount, tooling, and run-book automation to handle compressed regulatory windows without inducing secondary operational errors.
 
 ### LegalCounsel
 As Legal Counsel, focusing exclusively on contractual and enforceability issues, I raise the following 3 points:
 
-1. **Enforceability of Mandatory DORA Clauses (POL-010):** The assessment correctly identifies the absence of mandatory DORA contract clauses in POL-010, but fails to address the legal mechanism for remediation. Simply updating the internal policy is legally inert regarding existing vendor contracts; the bank must establish a formalized contract remediation playbook (e.g., bilateral amendments, incorporation via renewal, or unilateral change-of-law provisions) to legally bind third-party and sub-outsourced service providers to DORA's access, audit, and exit strategy requirements.
-2. **Notification Duties and Contractual SLAs (POL-003):** The reliance on internal policy updates for regulatory SLAs and incident reporting overlooks the contractual friction this creates. Vendor contracts must be proactively aligned to reflect these shortened notification duties; otherwise, third parties failing to report ICT incidents upstream within the statutory timeframes will expose the bank to regulatory penalties without an effective contractual indemnity or breach remedy.
-3. **Outsourcing and CTPP Oversight Integration:** While POL-010 notes missing CTPP oversight, the assessment must legally distinguish between standard ICT third-party providers and designated Critical ICT Third-Party Providers (CTPPs) under Article 31 of DORA. Standard outsourcing clauses are insufficient for CTPPs; contracts must legally accommodate the oversight, inspection, and penalty powers directly exercisable by the designated Union Oversight Forum and Lead Overseer without breaching confidentiality or creating conflicting legal obligations.
+1. **Enforceability of Contractual Outsourcing Remediation (POL-004):** Action 3 mandates the revision of POL-004 to introduce standardized DORA contractual provisions. However, the assessment fails to address the enforceability risk of retrofitting existing, legacy ICT contracts. The policy must explicitly prescribe a bilateral contract amendment strategy and define fallback legal mechanisms if critical ICT third-party providers (ICT TPPs) refuse to accept mandatory DORA terms (e.g., unhindered audit rights and termination assistance under Article 30).
+2. **Regulatory Notification Duties and Contractual Indemnification:** Action 2 addresses major ICT incident reporting workflows (POL-002), but omits the necessary alignment with vendor contract terms. To ensure the bank can meet strict regulatory notification timelines without breaching liability caps, vendor contracts must be updated to legally bind ICT TPPs to immediate self-reporting obligations and to indemnify the bank for regulatory fines arising from third-party operational failures.
+3. **Sub-outsourcing Chain Visibility:** The framework lacks a contractual mandate to restrict or pre-approve downstream sub-outsourcing of critical or important functions. Without binding contractual clauses requiring ICT TPPs to notify the bank of any intended sub-outsourcing—and granting the bank a contractual right to object—the bank's regulatory compliance posture under DORA Article 30 remains legally exposed and unenforceable against the actual service delivery chain.
 
 ### DevilsAdvocate
-1. **Over-confident assumption on policy remediation:** The draft assumes that updating internal policies (POL-001 through POL-012) equates to regulatory compliance, entirely ignoring the operational reality that rewriting a document does not fix fractured workflows, untracked legacy vendor contracts, or untested incident response mechanisms. 
-2. **Missing Risk:** The draft completely overlooks the severe liability exposure of board members under DORA's personal accountability mandates, failing to assess whether directors' and officers' (D&O) insurance covers the newly formalized operational resilience duties being forced onto the management body.
+1. **Over-confident Timeline Assumption:** The draft treats all twelve policies as if they can be overhauled concurrently under a generic "immediate, coordinated intervention," dangerously assuming that Risk, Security, Vendor Management, and HR have the bandwidth to rewrite their core governance documents simultaneously without causing operational paralysis or producing superficial, check-the-box policies that will fail regulatory scrutiny.
+2. **Unaddressed Risk (Cross-Border Data Sovereignty):** The draft completely misses the compliance trap between DORA's mandatory information-sharing/incident-reporting rules and existing data sovereignty laws (like GDPR and national banking secrecy laws), risking heavy privacy penalties if threat intelligence or incident details containing client data are shared across borders.
 
 ### Editor
 ### REDLINES
-
-1. **Executive summary:** Amend the executive summary to explicitly incorporate specific DORA article citations (Articles 5-45) and foundational Chapter II ICT Risk Management asset identification and business continuity requirements.
-2. **Executive summary:** Update the executive summary and document-wide timelines to establish firm target remediation dates tied to DORA’s statutory enforcement date of January 17, 2025.
-3. **Affected policies:** Update POL-001 in the affected policies and recommended actions to reassign ownership of board oversight workflows from the Chief Risk Officer to the management body (the Board).
-4. **Gap analysis:** Expand the gap analysis and recommended actions to include foundational ICT Risk Management requirements under Chapter II (Articles 5–15) regarding asset identification, protection, prevention, detection, and business continuity/disaster recovery plans.
-5. **Recommended actions:** Elevate Action 4 regarding Threat-Led Penetration Testing (POL-007) from Medium to High priority to reflect its resource-intensive regulatory nature.
-6. **Recommended actions:** Split Action 3 into phased, dedicated sub-workstreams to separate the massive operational burden of retrofitting legacy vendor contracts from the creation of the ICT third-party register of information.
-7. **Recommended actions:** Update Action 3 and POL-010 to mandate a formal contract remediation playbook (such as bilateral amendments or change-of-law provisions) to legally enforce mandatory DORA clauses on existing third-party providers.
-8. **Recommended actions:** Revise Action 3 and POL-003 to ensure vendor contracts are aligned with regulatory SLAs and include contractual remedies for upstream incident reporting failures.
-9. **Recommended actions:** Expand POL-010 in Action 5 to legally distinguish between standard ICT providers and designated Critical ICT Third-Party Providers (CTPPs) under Article 31, accommodating direct oversight powers of the Lead Overseer.
-10. **Open questions:** Add open questions regarding D&O insurance coverage for board members facing personal accountability mandates under DORA, alongside questions on regulatory deadlines for the first TLPT cycle, CTPP lead overseers, and ESA-mandated third-party register taxonomies.
+1. **Executive summary:** Update the Executive summary to explicitly incorporate statutory DORA article references (Articles 5–44) and the January 17, 2025 enforcement deadline.
+2. **Gap analysis:** Update the Gap analysis under POL-004 to mandate the creation of the comprehensive Register of Information required under Article 28(3).
+3. **Gap analysis:** Update the Gap analysis to include explicit compliance safeguards addressing the legal tension between DORA information-sharing mandates and cross-border data privacy frameworks (e.g., GDPR and banking secrecy laws).
+4. **Recommended actions:** Revise Action 1, Action 2, and Action 3 to incorporate a phased rollout schedule that prevents operational paralysis across the responsible departments.
+5. **Recommended actions:** Update Action 2 to size the operational and resourcing burden on the 24/7 Security Operations Center (SOC) and Incident Response teams, including provisions for automated run-books and headcount adjustments.
+6. **Recommended actions:** Update Action 2 to explicitly require that vendor contracts legally bind ICT TPPs to immediate incident self-reporting and indemnify the bank against regulatory fines.
+7. **Recommended actions:** Elevate Action 4 (Threat-Led Penetration Testing under POL-003) from Medium to High priority to reflect mandatory regulatory oversight.
+8. **Recommended actions:** Revise Action 3 to mandate a contractual sub-outsourcing mapping strategy that covers downstream sub-outsourcers, concentration risk, notification of changes, and bank veto rights.
+9. **Recommended actions:** Update Action 3 to include a bilateral contract amendment strategy and defined legal fallbacks for legacy ICT contracts where providers resist mandatory DORA terms.
+10. **Recommended actions:** Update Action 6 to reflect realistic deployment bandwidth rather than assuming concurrent overhauls of all twelve policies.
 
 REDLINES_COMPLETE

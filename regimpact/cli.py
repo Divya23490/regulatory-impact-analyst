@@ -66,7 +66,19 @@ def _persist(state: dict, reg: str) -> Path:
         # deepagents stores each virtual file as a FileData dict
         # ({"content": ..., "encoding": ...}), not a bare string.
         body = entry["content"] if isinstance(entry, dict) else entry
-        (research_dir / name).write_text(body, encoding="utf-8")
+        # deepagents' `StateBackend` names virtual files with the real,
+        # absolute cwd the agent ran from (e.g.
+        # "/Users/you/.../regulatory-impact-analyst/findings.md"), not a clean
+        # "/findings.md" root as its docs imply. Two problems follow:
+        #   1. `research_dir / name` — pathlib treats a leading "/" on the
+        #      right-hand side as absolute and DISCARDS research_dir,
+        #      resolving to real filesystem root (crashed as read-only once).
+        #   2. Preserving that path as nested directories would recreate the
+        #      operator's local username/filesystem layout inside a
+        #      version-controlled example run.
+        # We only want the leaf filename, so take the basename and flatten.
+        dest = research_dir / Path(name).name
+        dest.write_text(body, encoding="utf-8")
     return run_dir
 
 
