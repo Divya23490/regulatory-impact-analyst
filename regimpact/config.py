@@ -17,17 +17,33 @@ from __future__ import annotations
 
 import os
 from functools import lru_cache
+from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()  # read .env into os.environ on import
+ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(ROOT / ".env")  # read .env into os.environ on import
 
 MODEL_ID = os.getenv("REGIMPACT_MODEL", "gemini-3.5-flash-lite")
 _GEMINI_OPENAI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
 
+# ---- RAG ----
+EMBED_MODEL = os.getenv("REGIMPACT_EMBED_MODEL", "gemini-embedding-001")
+EMBED_DIM = int(os.getenv("REGIMPACT_EMBED_DIM", "768"))
+REGULATIONS_DIR = ROOT / "data" / "regulations"
+POLICIES_CSV = ROOT / "data" / "policies" / "policy_register.csv"
+INDEX_DIR = Path(os.getenv("REGIMPACT_INDEX_DIR", ROOT / "data" / "index"))
+# "auto" picks per embedder, from the measured eval (see docs/ARCHITECTURE.md §5):
+# dense for a semantic model, hybrid (BM25 + dense, RRF) for the weak offline one.
+RETRIEVAL_MODE = os.getenv("REGIMPACT_RETRIEVAL_MODE", "auto")
+
+
+def google_api_key() -> str | None:
+    return os.getenv("GOOGLE_API_KEY") or None
+
 
 def _require_key() -> str:
-    key = os.getenv("GOOGLE_API_KEY")
+    key = google_api_key()
     if not key:
         raise RuntimeError(
             "GOOGLE_API_KEY is not set. Copy .env.example to .env and fill it in "
@@ -57,13 +73,16 @@ def langchain_model():
     )
 
 
-@lru_cache(maxsize=1)
 def autogen_model_client():
     """An AutoGen model client — consumed by the review-committee agents.
 
     We pass `model_info` explicitly so AutoGen does not need a built-in entry for
     whatever model id we happen to use, and point the OpenAI-compatible client at
     Google's Gemini endpoint instead of OpenAI's.
+
+    Deliberately NOT cached: the committee closes its client when a review
+    finishes, so a cached instance would already be closed on the second
+    review of a revise -> review loop.
     """
     from autogen_core.models import ModelFamily
     from autogen_ext.models.openai import OpenAIChatCompletionClient

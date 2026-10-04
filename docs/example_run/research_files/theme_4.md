@@ -1,13 +1,15 @@
-# Theme 4: Third-Party Risk and Register of Information
+# Theme 4: ICT Third-Party Risk Management
 
 ## Regulatory Requirements
-Entities must maintain a register of information on all contractual arrangements for ICT services, distinguishing those supporting critical or important functions. Contracts for critical/important functions must explicitly include service levels, incident assistance, audit and access rights, sub-outsourcing conditions, and exit strategies. Concentration risk from single providers must be assessed prior to contracting.
+- Financial entities must maintain and update a register of information covering all contractual arrangements on the use of ICT services provided by third-party providers, distinguishing critical or important functions, and report yearly to competent authorities [dora::art28::p3].
+- Contractual arrangements for ICT services supporting critical or important functions must include specific key provisions: full service level descriptions, notice periods, security and business contingency measures, mandatory participation in TLPT, unrestricted rights of access, inspection, and audit for financial entities and competent authorities, and robust exit strategies with adequate transition periods [dora::art30::p3.1].
+- Financial entities must assess concentration risk, long or complex subcontracting chains, third-country jurisdictional issues, and insolvency law constraints [dora::art29::p2].
 
-## Affected Policies
-- **POL-005 (Third-Party & Outsourcing Policy)**: Covers vendor onboarding due diligence, but lacks a comprehensive register of information distinguishing critical or important ICT functions and pre-contract concentration risk assessments.
-- **POL-006 (Cloud Usage Policy)**: Governs approved cloud providers and shared-responsibility models, but guidance on exit strategies remains informal.
-- **POL-010 (Vendor Contract Clause Library)**: Provides standard legal clauses, but lacks mandatory provisions for audit/access rights, incident assistance, strict sub-outsourcing conditions, and robust exit strategies for ICT contracts.
+## Affected Internal Policies
+- [policy::POL-005] — Third-Party & Outsourcing Policy: Covers general vendor onboarding and due diligence, but lacks requirements for maintaining the DORA-mandated ICT third-party register distinguishing critical or important functions [dora::art28::p3].
+- [policy::POL-010] — Vendor Contract Clause Library: Standard clauses lack mandatory DORA provisions including unrestricted audit/access rights, TLPT participation obligations, specific notice periods, and mandatory exit transition periods for critical ICT services [dora::art30::p3.1].
 
 ## Gap Analysis
-- **Register of Information**: POL-005 must be updated to mandate the creation and maintenance of a central ICT register of information identifying critical/important functions and single-provider concentration risks.
-- **Contractual Requirements & Exit Strategies**: POL-010 and POL-006 must be revised to mandate standardized DORA-compliant clauses in all critical ICT contracts covering audit rights, sub-outsourcing, incident assistance, and formal, tested exit strategies.
+- **ICT Third-Party Register**: The bank lacks an entity-level register of ICT services meeting the granular documentation and annual reporting requirements of DORA Art. 28(3).
+- **Contractual Clause Deficiencies**: POL-010 does not enforce mandatory contractual clauses for critical/important ICT functions (audit rights, exit strategies, sub-outsourcing restrictions, TLPT participation) under DORA Art. 30.
+- **Concentration & Subcontracting Risk**: Lack of formal assessment procedures for complex subcontracting chains and third-country risks [dora::art29::p2].

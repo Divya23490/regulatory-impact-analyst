@@ -48,6 +48,8 @@ def build_graph(checkpointer=None):
 
     g.add_node("triage", nodes.triage, retry_policy=_LLM_RETRY)
     g.add_node("research", nodes.research, retry_policy=_LLM_RETRY)
+    # No retry: verify is deterministic code, so a failure is a bug, not a blip.
+    g.add_node("verify", nodes.verify)
     g.add_node("draft", nodes.draft, retry_policy=_LLM_RETRY)
     g.add_node("review", nodes.review, retry_policy=_LLM_RETRY)
     g.add_node("human_gate", nodes.human_gate)
@@ -56,7 +58,8 @@ def build_graph(checkpointer=None):
 
     g.add_edge(START, "triage")
     g.add_edge("triage", "research")
-    g.add_edge("research", "draft")
+    g.add_edge("research", "verify")
+    g.add_edge("verify", "draft")
     g.add_edge("draft", "review")
     g.add_edge("review", "human_gate")
 

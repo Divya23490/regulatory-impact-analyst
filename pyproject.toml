@@ -12,6 +12,16 @@ dependencies = [
     "autogen-ext[openai]>=0.4",
     "python-dotenv",
     "rich",
+    # RAG
+    "google-genai",                    # Gemini embeddings (gemini-embedding-001)
+    "chromadb>=1.0",                   # vector store: persistent, HNSW, metadata filters
+    # Version pins resolving a real conflict: autogen-core requires
+    # protobuf~=5.29; chromadb's OpenTelemetry exporter pulls
+    # googleapis-common-protos, whose newest releases need protobuf>=6.33.
+    # googleapis-common-protos<1.70 works with protobuf 5.29 and keeps
+    # `pip check` clean.
+    "protobuf~=5.29.3",
+    "googleapis-common-protos<1.70",
 ]
 
 [project.optional-dependencies]

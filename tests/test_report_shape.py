@@ -12,8 +12,15 @@ from regimpact.research_agent import _file_text
 def test_graph_has_all_nodes():
     g = build_graph()
     nodes = set(g.get_graph().nodes)
-    assert {"triage", "research", "draft", "review",
+    assert {"triage", "research", "verify", "draft", "review",
             "human_gate", "revise", "finalize"} <= nodes
+
+
+def test_research_flows_through_citation_verification():
+    g = build_graph().get_graph()
+    edges = {(e.source, e.target) for e in g.edges}
+    assert ("research", "verify") in edges and ("verify", "draft") in edges
+    assert ("research", "draft") not in edges
 
 
 def test_router_approve_goes_to_finalize():

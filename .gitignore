@@ -5,4 +5,7 @@ __pycache__/
 .DS_Store
 .env
 outputs/
+# derived: rebuilt by `regimpact index` / `regimpact ingest`
+data/index/
+data/cache/
 .pytest_cache/

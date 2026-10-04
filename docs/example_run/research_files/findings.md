@@ -1,31 +1,26 @@
-# DORA Regulatory Impact Assessment — Findings
+# DORA Regulatory Impact Assessment: Research Findings
 
 ## ICT Risk Management Framework
-- **What the regulation requires**: Financial entities must maintain a documented ICT risk management framework approved and reviewed at least annually by the management body. The management body bears ultimate responsibility and must complete regular ICT risk training.
-- **Affected policies**: POL-001 (ICT Risk Management Framework), POL-011 (Board Training & Competence Policy).
-- **Gap**: POL-001 lacks a formal annual board approval requirement, and POL-011 does not currently mandate regular ICT risk training for members of the management body.
+- **What the regulation requires**: Financial entities must establish a comprehensive ICT risk management framework with robust strategies, policies, and tools to protect all information and physical assets [dora::art6::p1, dora::art6::p2]. It requires a digital operational resilience strategy setting out risk tolerances and impact tolerances [dora::art6::p8], as well as independent control functions and three lines of defence governance [dora::art6::p4].
+- **Which internal policies are affected**: [policy::POL-001] (ICT Risk Management Framework) and [policy::POL-011] (Board Training & Competence Policy).
+- **The gap**: POL-001 lacks formalization of the digital operational resilience strategy and annual board review requirements. POL-011 lacks specialized ICT resilience training modules for the management body.
 
-## Incident Management and Reporting
-- **What the regulation requires**: Entities must classify ICT-related incidents by severity using common criteria (clients affected, data losses, duration, geographical spread, economic impact). Major incidents must be reported via initial, intermediate, and final reports within regulatory deadlines.
-- **Affected policies**: POL-003 (Incident Management Standard).
-- **Gap**: POL-003 uses internal operational severity levels (P1-P4) rather than DORA's common criteria and lacks structured workflows and deadlines for regulatory reporting to competent authorities.
+## ICT-Related Incident Reporting
+- **What the regulation requires**: Financial entities must establish incident management processes with early warning indicators and classification procedures [dora::art17::p3], reporting major incidents to competent authorities via initial, intermediate, and final reports within regulatory deadlines [dora::art19::p1.1, dora::art19::p4], and notifying affected clients without undue delay [dora::art19::p3].
+- **Which internal policies are affected**: [policy::POL-003] (Incident Management Standard) and [policy::POL-004] (Business Continuity & Disaster Recovery).
+- **The gap**: POL-003 lacks regulatory incident workflows, timelines, and multi-stage reporting templates. POL-004 lacks client disclosure procedures and threat notification workflows [dora::art19::p2, dora::art19::p3].
 
 ## Digital Operational Resilience Testing
-- **What the regulation requires**: A testing programme including vulnerability assessments is required. Significant entities must conduct threat-led penetration testing (TLPT) at least every three years using qualified testers.
-- **Affected policies**: POL-004 (Business Continuity & Disaster Recovery), POL-007 (Penetration Testing Standard).
-- **Gap**: POL-007 mandates annual internet-facing penetration tests but does not include a 3-year TLPT programme or tester qualification criteria; POL-004's scenario library is limited to data-centre loss.
+- **What the regulation requires**: Entities (other than microenterprises) must establish and maintain a comprehensive testing programme as part of their ICT risk framework, applying a risk-based approach across vulnerability assessments, scans, network security reviews, and penetration testing [dora::art24::p1, dora::art24::p3, dora::art25::p1].
+- **Which internal policies are affected**: [policy::POL-007] (Penetration Testing Standard) and [policy::POL-001] (ICT Risk Management Framework).
+- **The gap**: POL-007 is restricted to annual external pen tests of internet-facing systems, omitting vulnerability scans, open-source analyses, physical security reviews, and risk-based testing methodologies mandated by DORA Art. 25(1).
 
-## Third-Party Risk and the Register of Information
-- **What the regulation requires**: Entities must maintain a register of information on all ICT contractual arrangements, distinguishing critical or important functions. Critical/important contracts must include service levels, incident assistance, audit/access rights, sub-outsourcing conditions, and exit strategies, alongside pre-contract concentration risk assessments.
-- **Affected policies**: POL-005 (Third-Party & Outsourcing Policy), POL-006 (Cloud Usage Policy), POL-010 (Vendor Contract Clause Library).
-- **Gap**: POL-005 lacks a comprehensive register of ICT functions and concentration risk assessments; POL-010 lacks mandatory DORA clauses (audit rights, sub-outsourcing, incident assistance); POL-006 treats cloud exit strategies informally.
-
-## Critical ICT Third-Party Provider Oversight
-- **What the regulation requires**: Providers designated as critical are subject to Union-level oversight by a Lead Overseer issuing recommendations; financial entities must factor unremediated recommendations into their risk decisions.
-- **Affected policies**: POL-005 (Third-Party & Outsourcing Policy).
-- **Gap**: POL-005 covers general vendor onboarding but contains no provisions for tracking EU critical ICT third-party provider (CTPP) designations or incorporating Lead Overseer recommendations into operational risk decisions.
+## ICT Third-Party Risk Management
+- **What the regulation requires**: Entities must maintain a register of all ICT contractual arrangements distinguishing critical/important functions and report yearly to regulators [dora::art28::p3]. Contracts for critical functions must include service levels, notice periods, security measures, mandatory TLPT participation, unrestricted audit/access rights, and exit strategies [dora::art30::p3.1].
+- **Which internal policies are affected**: [policy::POL-005] (Third-Party & Outsourcing Policy) and [policy::POL-010] (Vendor Contract Clause Library).
+- **The gap**: POL-005 lacks the required ICT third-party register distinguishing critical functions. POL-010 lacks mandatory DORA contract clauses regarding audit rights, TLPT cooperation, sub-outsourcing controls, and exit transition periods.
 
 ## Cyber Threat Information Sharing
-- **What the regulation requires**: Entities may exchange cyber threat information within trusted communities, provided that personal data handling complies with GDPR.
-- **Affected policies**: POL-012 (Threat Intelligence & Information Sharing).
-- **Gap**: POL-012 governs consumption of commercial threat feeds but lacks protocols for participating in trusted community information sharing and ensuring GDPR compliance during exchanges.
+- **What the regulation requires**: Financial entities may exchange cyber threat information and intelligence within trusted communities under rules protecting business confidentiality, personal data (GDPR), and competition law [dora::art45::p1], and must notify regulators of their participation [dora::art45::p3].
+- **Which internal policies are affected**: [policy::POL-012] (Threat Intelligence & Information Sharing).
+- **The gap**: POL-012 covers commercial feed consumption but lacks a governance framework, rules of conduct, GDPR/confidentiality safeguards, and regulatory notification procedures for participating in trusted threat-sharing communities.

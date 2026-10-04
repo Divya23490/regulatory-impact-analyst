@@ -35,14 +35,28 @@ _STOP = "REDLINES_COMPLETE"
 
 
 def _committee(model_client) -> RoundRobinGroupChat:
+    # CONCEPT — retrieve-then-read review. The task message carries an
+    # evidence pack: the source text of every provision the draft cites,
+    # fetched deterministically before the debate (nodes.review). The
+    # Compliance Officer checks each claim against that text.
+    #
+    # Why not give the agent a search *tool* instead? We tried. Gemini 3
+    # attaches a "thought signature" to every function call and rejects the
+    # next request unless it's sent back; via the OpenAI-compatible endpoint
+    # it sits in a vendor extension field that AutoGen's
+    # OpenAIChatCompletionClient drops, so the turn after any tool call 400s.
+    # Retrieve-then-read sidesteps that — and checks *every* citation rather
+    # than the ones an agent decides to look up.
     compliance = AssistantAgent(
         "ComplianceOfficer",
         model_client=model_client,
         system_message=(
             "You are the Group Compliance Officer. Check the draft impact "
-            "assessment for: missing obligations, wrong deadlines, and articles "
-            "of the regulation that are not addressed. Be specific and terse. "
-            "Raise at most 3 points."
+            "assessment against the SOURCE TEXT section of the task: flag any "
+            "claim the cited provision does not support (wrong deadline, "
+            "frequency, scope or obligation), citing the [chunk_id]. Also flag "
+            "obligations in the source text the draft omits. Be specific and "
+            "terse. Raise at most 3 points."
         ),
     )
     risk = AssistantAgent(
@@ -78,7 +92,8 @@ def _committee(model_client) -> RoundRobinGroupChat:
         system_message=(
             "You are the Editor. You speak LAST. Consolidate every point raised "
             "into a single numbered redline list titled 'REDLINES'. Each item: "
-            "one sentence, actionable, referencing the section it changes. "
+            "one sentence, actionable, referencing the section it changes; keep "
+            "any [chunk_id] citations the reviewers gave. "
             f"After the list, output the token {_STOP} on its own line."
         ),
     )
@@ -90,14 +105,18 @@ def _committee(model_client) -> RoundRobinGroupChat:
     )
 
 
-async def _run(draft_report: str, regulation_name: str) -> tuple[str, str]:
+async def _run(draft_report: str, regulation_name: str, evidence: str) -> tuple[str, str]:
     model_client = autogen_model_client()
-    team = _committee(model_client)
-    task = (
-        f"Review this draft {regulation_name} impact assessment. One round only; "
-        f"the Editor then consolidates.\n\n--- DRAFT ---\n{draft_report}"
-    )
-    result = await team.run(task=task)
+    try:
+        team = _committee(model_client)
+        task = (
+            f"Review this draft {regulation_name} impact assessment. One round only; "
+            f"the Editor then consolidates.\n\n--- DRAFT ---\n{draft_report}"
+            f"\n\n--- SOURCE TEXT of the provisions the draft cites ---\n{evidence}"
+        )
+        result = await team.run(task=task)
+    finally:
+        await model_client.close()
 
     transcript_lines = [
         f"### {m.source}\n{m.to_text()}" for m in result.messages
@@ -110,10 +129,12 @@ async def _run(draft_report: str, regulation_name: str) -> tuple[str, str]:
          for m in reversed(result.messages) if m.source == "Editor"),
         "REDLINES\n(none captured)",
     )
-    await model_client.close()
     return transcript, redlines
 
 
-def review_draft(draft_report: str, regulation_name: str) -> tuple[str, str]:
-    """Sync wrapper. Returns (full_transcript, consolidated_redlines)."""
-    return asyncio.run(_run(draft_report, regulation_name))
+def review_draft(draft_report: str, regulation_name: str, evidence: str = "") -> tuple[str, str]:
+    """Sync wrapper. Returns (full_transcript, consolidated_redlines).
+
+    `evidence` is the retrieved source text of the provisions the draft cites.
+    """
+    return asyncio.run(_run(draft_report, regulation_name, evidence or "(no citations in draft)"))

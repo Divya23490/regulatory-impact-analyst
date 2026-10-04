@@ -1,11 +1,14 @@
-# Theme 5: Critical ICT Third-Party Provider Oversight
+# Theme 5: Cyber Threat Information Sharing
 
 ## Regulatory Requirements
-ICT third-party providers designated as critical are subject to direct Union-level oversight, led by a Lead Overseer who can issue recommendations. Financial entities must factor any unremediated recommendations from the Lead Overseer into their risk management decisions.
+- Financial entities may exchange cyber threat information and intelligence (including indicators of compromise, tactics, techniques, procedures, security alerts, and configuration tools) within trusted communities to enhance digital operational resilience [dora::art45::p1].
+- Information-sharing arrangements must be governed by rules of conduct that protect business confidentiality, ensure personal data protection under GDPR, and comply with competition policy guidelines [dora::art45::p1].
+- Financial entities must notify their competent authorities upon validation of their membership in such information-sharing arrangements, or upon cessation of membership [dora::art45::p3].
 
-## Affected Policies
-- **POL-005 (Third-Party & Outsourcing Policy)**: Currently focuses on standard vendor onboarding and vendor management lifecycle without addressing regulatory oversight by a Union Lead Overseer or tracking critical provider (CTPP) designations.
+## Affected Internal Policies
+- [policy::POL-012] — Threat Intelligence & Information Sharing: Covers consumption of commercial threat intelligence feeds, but lacks a framework or governance for participating in trusted community information-sharing arrangements.
 
 ## Gap Analysis
-1. **CTPP Monitoring & Oversight Integration**: POL-005 must be updated to include tracking mechanisms for critical ICT third-party provider (CTPP) designations issued at the EU level.
-2. **Recommendation Remediation Tracking**: A formal governance workflow must be established within POL-005 to ensure that recommendations issued by the Lead Overseer to critical third-party providers are formally evaluated, integrated into vendor risk assessments, and factored into the bank's operational risk decisions.
+- **Trusted Community Participation**: POL-012 does not provide guidelines, rules of conduct, or operational protocols for sharing threat intelligence with peer financial entities under DORA Art. 45(1).
+- **Regulatory Notification**: No procedure exists for notifying competent authorities of participation in or cessation of threat-sharing arrangements [dora::art45::p3].
+- **Confidentiality & GDPR Safeguards**: Formal frameworks governing data privacy and competition law compliance during information exchange are absent.
